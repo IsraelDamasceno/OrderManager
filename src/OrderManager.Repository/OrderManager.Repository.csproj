@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Maps\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrderManager.Domain\OrderManager.Domain.csproj" />
+    <ProjectReference Include="..\OrderManager.Interfaces\OrderManager.Interface.csproj" />
+  </ItemGroup>
+
+</Project>
