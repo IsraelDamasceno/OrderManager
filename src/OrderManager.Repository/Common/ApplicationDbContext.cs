@@ -12,7 +12,6 @@ namespace OrderManager.Repository
         public DbSet<PromotionProduct> PromotionsProducts { get; set; }
         public DbSet<Combo> Combos { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderProduct> OrderProducts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
