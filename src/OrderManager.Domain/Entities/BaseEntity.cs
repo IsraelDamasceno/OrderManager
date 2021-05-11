@@ -6,6 +6,5 @@ namespace OrderManager.Domain
     {
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
-        public bool Active { get; set; }
     }
 }

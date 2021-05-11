@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OrderManager.Domain
 {
-    public class Product: BaseEntity
+    public class Product: BaseEntity, IShow
     {
         public string Name { get; set; }
         public string Code { get; set; }
@@ -12,6 +12,7 @@ namespace OrderManager.Domain
         public Guid IdCategory { get; set; }
         public virtual CategoryProduct CategoryProduct { get; set; }
         public virtual List<Image> Images { get; set; }
+        public bool Active { get; set; }
 
     }
 }
