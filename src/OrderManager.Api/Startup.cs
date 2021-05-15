@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +9,6 @@ using Npgsql;
 using OrderManager.DI;
 using OrderManager.Repository;
 using System.Data.Common;
-using Microsoft.EntityFrameworkCore;
 
 namespace OrderManager.Api
 {
@@ -16,8 +16,7 @@ namespace OrderManager.Api
     {
         public IConfiguration Configuration { get; }
 
-        public DbConnection dbConnection => new NpgsqlConnection(Configuration.GetConnectionString("App"));
-
+        //public DbConnection DbConnection => new NpgsqlConnection(Configuration.GetConnectionString("App"));
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,10 +28,9 @@ namespace OrderManager.Api
             DependencyInjection.Register(services);
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-            options.UseNpgsql(
-                dbConnection,
-                assembly => assembly.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
+                options.UseNpgsql(Configuration.GetConnectionString("App"));
             });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

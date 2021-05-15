@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OrderManager.Interface.Repositories;
+using OrderManager.Repository;
 
 namespace OrderManager.DI
 {
@@ -11,7 +13,7 @@ namespace OrderManager.DI
 
         private static void RepositoryDependence(IServiceCollection serviceProvider)
         {
-
+            serviceProvider.AddScoped<IProductRepository, ProductRepository>();
         }
     }
 }

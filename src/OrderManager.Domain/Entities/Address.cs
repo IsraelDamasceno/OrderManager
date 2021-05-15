@@ -12,5 +12,6 @@ namespace OrderManager.Domain
         public string PostalCode { get; set; }
         public Guid IdCity { get; set; }
         public virtual City City { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

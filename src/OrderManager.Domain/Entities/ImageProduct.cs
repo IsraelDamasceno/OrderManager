@@ -1,11 +1,13 @@
-﻿namespace OrderManager.Domain
+﻿using System;
+
+namespace OrderManager.Domain
 {
-    public class ImageProduct
+    public class ImageProduct: BaseEntity
     {
-            public int IdImage { get; set; }
+            public Guid IdImage { get; set; }
             public virtual Image Image { get; set; }
 
-            public int IdProduct { get; set; }
+            public Guid IdProduct { get; set; }
             public virtual Product Product { get; set; }
 
     }

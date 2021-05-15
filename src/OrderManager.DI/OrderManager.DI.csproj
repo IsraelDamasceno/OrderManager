@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrderManager.Interfaces\OrderManager.Interface.csproj" />
+    <ProjectReference Include="..\OrderManager.Repository\OrderManager.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
