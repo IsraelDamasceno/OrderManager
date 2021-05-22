@@ -6,9 +6,9 @@ namespace OrderManager.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PedidoController : AppBaseController
+    public class OrderController : AppBaseController
     {
-        public PedidoController(IServiceProvider serviceProvider): base(serviceProvider)
+        public OrderController(IServiceProvider serviceProvider): base(serviceProvider)
         {          
         }
         [HttpGet("Nomes")]

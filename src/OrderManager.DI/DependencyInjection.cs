@@ -14,6 +14,8 @@ namespace OrderManager.DI
         private static void RepositoryDependence(IServiceCollection serviceProvider)
         {
             serviceProvider.AddScoped<IProductRepository, ProductRepository>();
+            serviceProvider.AddScoped<ICityRepository, CityRepository>();
+            //serviceProvider.AddScoped<IProductRepository, ProductRepository>();
         }
     }
 }

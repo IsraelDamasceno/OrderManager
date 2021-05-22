@@ -1,14 +1,12 @@
-﻿using OrderManager.Domain;
-using System.Collections.Generic;
+﻿using System;
 
 namespace OrderManager.Interface.Repositories
 {
     public interface IProductRepository
     {
-        List<Product> GetAll();
-        List<Product> GetByName(string name);
-        List<Product> GetByCode(string code);
-        List<Product> Detail(int? id);
-        string Error();
+        dynamic Get(string ordem);
+        dynamic Search(string text, int pagina, string ordem);
+        dynamic Detail(Guid id);
+        dynamic Imagens(Guid id);
     }
 }
